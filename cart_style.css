@@ -1,6 +1,14 @@
 /* STYLING FOR THE SHOPPING CART PAGE */
 
-.centered-header{
+.centered-header {
     text-align: center;
-    font-size: 80;
-}
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('miaybi.png');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+  }
+  
+  .centered-header h3 {
+    color: #f7f6f6;
+    font-size: 100px;
+  }
