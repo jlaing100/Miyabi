@@ -1,3 +1,11 @@
+:root {
+  --primary-black:#212123;
+  --secondary-grey: #616063;
+  --secondary-tan:#ccb9b1;
+  --secondary-clay: #c08267;
+  --secondary-brown:#a0583c;
+}
+
 #main-header {
   display: block;
   margin-left: auto;
@@ -10,6 +18,13 @@
 
 #navbar {
 	background-color: black;
+  position:fixed;
+  width:100%;
+  margin:0;
+  padding:0;
+  top:0;
+  left:0;
+  list-style-type: none;
 }
 #navbar li {
 	display: inline;
