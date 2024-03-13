@@ -53,6 +53,30 @@
   margin-bottom: 300px;
 }
 
+
+#main-header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+
+}
+
+#navbar {
+	background-color: black;
+}
+#navbar li {
+	display: inline;
+	padding: 0px 20px;
+	color: white;
+}
+#navbar a {
+	color:white;
+}
+#navbar ul {
+	padding: 5px 30%;
+}
+
 /*
 
 .custom-navbar {
