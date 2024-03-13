@@ -8,36 +8,49 @@
 
 #main-header {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-  border: 3px solid black;
-  padding-left: 30%;
-  padding-right: 30%;
+  margin:0;
+  width: 100%;
+  left:0; 
+
+
 }
 
 #navbar {
+  display:flex;
+  flex-direction: row;
 	background-color: black;
-  position:fixed;
+  position:sticky;
   width:100%;
   margin:0;
   padding:0;
-  top:0;
-  list-style-type: none;
+  left:0; 
+  list-style: none;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow-x:scroll;
+  text-align: center;
 }
 #navbar li {
-	display: inline;
-	padding: 0px 20px;
-	color: white;
+  margin-right:1em;
+  display: inline;
+  margin:0;
+  border-right: 1px solid #bbb;
+
 }
 #navbar a {
-	color:white;
+  text-decoration: none;
+	color:var(--secondary-tan);
+  border-right:#c08267;
+  padding: 10px 30px;
 }
-#navbar ul {
-	padding: 5px 30%;
+#navbar li :hover {
+  background-color:#c08267;
+  color:white
 }
 
-.container {
+
+
+/* .container {
 	width: 80%;
 }
 
