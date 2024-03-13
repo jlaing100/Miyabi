@@ -1,0 +1,14 @@
+/* STYLING FOR THE SHOPPING CART PAGE */
+  
+  .centered-header h3 {
+    color: #503d3d;
+    font-size: 100px;
+  }
+
+  body {
+    text-align: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(interior_ex.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+}
