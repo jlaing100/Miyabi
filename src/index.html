@@ -1,99 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootstrap 5 Example</title>
+    <title>Miyabi</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../docs/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../docs/css/style.css" rel="stylesheet">
     <script src = "../js/bootstrap.bundle.min.js"></script>
   </head>
     
   
   <body>
     <!--Image -->
-    <img src="../docs/images/Miyabi.png" class="rounded mx-auto d-block" alt="...">
+            <div class="text-center">
+                  <img src="../docs/images/Miyabi.png" class="img-fluid py-2 border border-5 rounded-4 border-dark my-2" alt="../docs/images/Miyabi.png">
+            </div>
     <!---->
+    
+    <!--Search Bar  -->
+          <div class="input-group mb-2 w-50 container">
+              <input type="text" class="form-control border border-3 border-end-0 border-dark" placeholder="Search">
+              <button class="btn border border-2 border-dark" type="submit" style="background-color: #ccb9b1; color:black">Go</button>
+          </div>
+    <!--  -->
 
     <!-- Navbar -->
-
-    <nav class="navbar bg-body-tertiary sticky-top">
-      <div class="myNavbar">
+          
+          <nav class="navbar navbar-expand-md bg-dark navbar-collapse-center sticky-top"data-bs-theme="dark">
       <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <a class="navbar-brand ps-3" href="#">Shop By Room</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <a class="navbar-brand" href="#">Living Room</a>
-        <a class="navbar-brand" href="#">Kitchen</a>
-        <a class="navbar-brand" href="#">Dining</a>
-        <a class="navbar-brand" href="#">Bedroom</a>
-        <a class="navbar-brand" href="#">Bathroom</a>
-        <a class="navbar-brand" href="#">Kids Room</a>
-        <a class="navbar-brand" href="#">Hallway</a>
-        <a class="navbar-brand" href="#">Balcony</a>
-        <a class="navbar-brand" href="#">Outdoor</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page" href="#">Living</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page" href="#">Kitchen</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page" href="#">Dining</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page" href="#">Bedroom</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page" href="#">Bathroom</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page" href="#">Outdoor</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page" href="#">Kids</a>
+            </li>
+          </ul>
+        </div>
       </div>
+          </nav>
 
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <!---->
+
+    <!-- Carosel -->
+
+          <div id="carouselExampleFade" class="carousel slide carousel-fade container-sm px-5 py-4 border-bottom" style="max-width: 60%;">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../docs/images/examplePng1.png" class="d-block w-100 rounded-2" alt="../docs/images/Miyabi.png">
+        </div>
+        <div class="carousel-item">
+          <img src="../docs/images/examplePng2.png" class="d-block w-100 rounded-2" alt="../docs/images/Miyabi.png">
+        </div>
+        <div class="carousel-item">
+          <img src="../docs/images/examplePng1.png" class="d-block w-100 rounded-2" alt="../docs/images/Miyabi.png">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
           </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex mt-3" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+
+    <!--  -->
+          <div class="container-sm text-center mt-5 mb-5" style="max-width: 70%;">
+                <strong><u>Featured Items</u></strong>
+          </div>
+
+    <!-- Featured cards -->
+    <div class="container" style="max-width: 70%; min-width: 60%;";>
+    <div class="row row-cols-3 row-cols-sm-3 g-4">
+      <div class="col">
+        <div class="card" style="border-color: #a0583c; max-width: 80%;">
+          <img src="../docs/images/exampleCard.png" class="card-img-top" alt="../docs/images/exampleCard.png">
+          <div class="card-body">
+            <p class="card-title fw-bolder fs-6">Item Name</p>
+            <p class="card-text fw-medium" style="font-size:70%;">From $199.99</p>
           </div>
         </div>
       </div>
+      <div class="col">
+        <div class="card" style="border-color: #a0583c; max-width: 80%;">
+          <img src="../docs/images/exampleCard.png" class="card-img-top" alt="../docs/images/exampleCard.png">
+          <div class="card-body">
+            <p class="card-title fw-bolder fs-6">Item Name</p>
+            <p class="card-text fw-medium" style="font-size:70%;">From $199.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="border-color: #a0583c; max-width: 80%;">
+          <img src="../docs/images/exampleCard.png" class="card-img-top" alt="../docs/images/exampleCard.png">
+          <div class="card-body">
+            <p class="card-title fw-bolder fs-6">Item Name</p>
+            <p class="card-text fw-medium" style="font-size:70%;">From $199.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="border-color: #a0583c; max-width: 80%;">
+          <img src="../docs/images/exampleCard.png" class="card-img-top" alt="../docs/images/exampleCard.png">
+          <div class="card-body">
+            <p class="card-title fw-bolder fs-6">Item Name</p>
+            <p class="card-text fw-medium" style="font-size:70%;">From $199.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="border-color: #a0583c; max-width: 80%;">
+          <img src="../docs/images/exampleCard.png" class="card-img-top" alt="../docs/images/exampleCard.png">
+          <div class="card-body">
+            <p class="card-title fw-bolder fs-6">Item Name</p>
+            <p class="card-text fw-medium" style="font-size:70%;">From $199.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="border-color: #a0583c; max-width: 80%;">
+          <img src="../docs/images/exampleCard.png" class="card-img-top" alt="../docs/images/exampleCard.png">
+          <div class="card-body">
+            <p class="card-title fw-bolder fs-6">Item Name</p>
+            <p class="card-text fw-medium" style="font-size:70%;">From $199.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="border-color: #a0583c; max-width: 80%;">
+          <img src="../docs/images/exampleCard.png" class="card-img-top" alt="../docs/images/exampleCard.png">
+          <div class="card-body">
+            <p class="card-title fw-bolder fs-6">Item Name</p>
+            <p class="card-text fw-medium" style="font-size:70%;">From $199.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="border-color: #a0583c; max-width: 80%;">
+          <img src="../docs/images/exampleCard.png" class="card-img-top" alt="../docs/images/exampleCard.png">
+          <div class="card-body">
+            <p class="card-title fw-bolder fs-6">Item Name</p>
+            <p class="card-text fw-medium" style="font-size:70%;">From $199.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="border-color: #a0583c; max-width: 80%;">
+          <img src="../docs/images/exampleCard.png" class="card-img-top" alt="../docs/images/exampleCard.png">
+          <div class="card-body">
+            <p class="card-title fw-bolder fs-6">Item Name</p>
+            <p class="card-text fw-medium" style="font-size:70%;">From $199.99</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <footer class="bg-dark" style="background: #333; color: #fff;text-align: center; padding: 20px; margin-top: 40px;">
+      <p>Copyright &copy; 2024 Miyabi</p>
+        <a href="#" class="px-1">Home</a>
+        <a href="#" class="px-1">About</a>
+        <a href="#" class="px-1">Team</a>
+        <a href="#" class="px-1">Orders</a>
+        <a href="#" class="px-1">Contact</a>
+  </footer>
+    
 
 
   
-    <!-- Dummy content-->
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur hic, culpa enim rem saepe consectetur. Deserunt veritatis vitae quis labore quas! Illo impedit fugit laborum sed eos at optio tenetur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur veritatis voluptatem fugiat nesciunt doloremque amet itaque quasi pariatur dolores dignissimos nam, id dolorem saepe sint labore explicabo beatae consequatur?</p>
 
 
 
