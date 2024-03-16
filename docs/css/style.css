@@ -7,13 +7,10 @@
 }
 
 #main-header {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
+  margin:0;
   width: 40%;
-  padding-left: 30%;
-  padding-right: 30%;
-  border: none;
+  left:0; 
 }
 
 #navbar {
@@ -47,22 +44,4 @@
 #navbar li :hover {
   background-color:#c08267;
   color:white
-}
-
-
-
-/* .container {
-	width: 80%;
-}
-
-h2 {
-  color: black;
-  text-align: center;
-}
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
 }
