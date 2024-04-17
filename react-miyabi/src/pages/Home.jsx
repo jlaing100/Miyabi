@@ -14,7 +14,7 @@ const Home = () => {
     <>
     
     <Carosel />
-    <div class="container-sm text-center mt-5 mb-5" style={custWidth}>
+    <div className="container-sm text-center mt-5 mb-5" style={custWidth}>
         <strong><u>Featured Items</u></strong>
     </div>
     <div className="container" style={containerStyle}>
@@ -46,7 +46,6 @@ const Home = () => {
       <div className = "col">
         <Cards price = "$19.99"/>
       </div>
-      
       </div>
       </div>
 
