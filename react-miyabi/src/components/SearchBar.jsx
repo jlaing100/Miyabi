@@ -19,9 +19,10 @@ const SearchBar = () => {
     <>
     <div className="container-fluid position-relative">
     <Link to = "/">
-        <button className="btn btn-dark ml-auto position-absolute bottom-0 start-1">
+        <Link to ='/Cart'><button className="btn btn-dark ml-auto position-absolute bottom-0 start-1">
         <img src={menuIcon}alt="" />
         </button>
+        </Link>
     </Link>
     
     <div className="input-group mb-2 w-50 container text-center">

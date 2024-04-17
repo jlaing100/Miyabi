@@ -13,8 +13,10 @@ import Home from './pages/Home';
 import NoPage from './pages/NoPage';
 import Living from './pages/Living';
 import Kids from './pages/Kids';
+import Menu from './pages/Menu';
 
 export default function App() {
+
   return (   
 
   <BrowserRouter>
@@ -31,6 +33,9 @@ export default function App() {
         <Route path="Outdoor" element={<Outdoor/>} />
         <Route path="Kids" element={<Kids />} />
         <Route path="*" element={<NoPage/>} /> {/* catches all unidentified routes*/}
+      </Route>
+      <Route>
+      <Route path="Menu" element={<Menu />} />
       </Route>
     </Routes>
   </BrowserRouter>
