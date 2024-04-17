@@ -9,6 +9,8 @@ import Dining from "./pages/Dining";
 import Kitchen from "./pages/Kitchen";
 import LandingDetail from "./pages/LandingDetail";
 import Outdoor from "./pages/Outdoor";
+import Home from './pages/Home';
+import NoPage from './pages/NoPage';
 
 
 export default function App() {
