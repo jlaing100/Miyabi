@@ -9,7 +9,6 @@ import { Outlet } from 'react-router-dom';
 const Layout = () => {
   return (
     <>
-    {/* <div>Hello</div> */}
     <Header />
     <SearchBar />
     <Navbar />
@@ -17,6 +16,7 @@ const Layout = () => {
     <Footer />
     
     </>
+
   );
 }
 
