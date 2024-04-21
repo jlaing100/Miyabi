@@ -14,6 +14,7 @@ import NoPage from './pages/NoPage';
 import Living from './pages/Living';
 import Kids from './pages/Kids';
 import Menu from './pages/Menu';
+import Login from './pages/Login';
 
 export default function App() {
 
@@ -35,7 +36,10 @@ export default function App() {
         <Route path="*" element={<NoPage/>} /> {/* catches all unidentified routes*/}
       </Route>
       <Route>
-      <Route path="Menu" element={<Menu />} />
+        <Route path="Menu" element={<Menu />} />
+      </Route>
+      <Route>
+        <Route path="Login" element={<Login />} />
       </Route>
     </Routes>
   </BrowserRouter>

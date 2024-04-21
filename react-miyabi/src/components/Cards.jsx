@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import exampleCard from "../../../docs/images/exampleCard.png"
+import exampleCard from "../../../docs/images/exampleCard.png";
 
 const Cards = (props) => {
     const containerStyle = {
@@ -21,7 +21,7 @@ return (
     <div className="row row-cols-3 row-cols-sm-3 g-4">
       <div className="col"> */}
         <div className="card" style={cardStyle}>
-          <img src={exampleCard} className="card-img-top" alt="../docs/images/exampleCard.png"/>
+          <img src={props.product} className="card-img-top img-reponsive" alt="../docs/images/exampleCard.png"/>
           <div className="card-body">
             <p className="card-title fw-bolder fs-6">Item Name</p>
             <p className="card-text fw-medium" style={font}>From {props.price}</p>
