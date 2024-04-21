@@ -27,31 +27,31 @@ const containerStyle = {
     <div className="container" style={containerStyle}>
       <div className="row row-cols-3 row-cols-sm-3 g-4">
         <div className="col">
-          <Cards price = "$199.99" product = {Living1}/>
+          <Cards price = "$52.00" product = {Living1} name = "Bamboo Rug" link = "https://haikudesigns.com/products/contemporary-natural-bamboo-rug?variant=46519833690422"/>
           </div>
       <div className = "col">
-        <Cards price = "$29.99"product = {Living2}/>
+        <Cards price = "$901.00"product = {Living2}name = "Azara Coffee Table"link = "https://haikudesigns.com/products/azara-coffee-table"/>
       </div>
       <div className = "col">
-        <Cards price = "$99.99"product = {Living3}/>
+        <Cards price = "551.00"product = {Living3}name = "Azara End Table"link = "https://haikudesigns.com/products/azara-end-table"/>
       </div>
       <div className = "col">
-        <Cards price = "$59.99"product = {Living4}/>
+        <Cards price = "$638.00"product = {Living4}name = "Danica Lounge Chair"link = "https://haikudesigns.com/products/danica-lounge-chair"/>
       </div>
       <div className = "col">
-        <Cards price = "$39.99"product = {Living5}/>
+        <Cards price = "$3495.00"product = {Living5}name = "Ran D.E.L Sofa Bed"link = "https://haikudesigns.com/products/ran-d-e-l-sofa-bed"/>
       </div>      
       <div className = "col">
-        <Cards price = "$159.99"product = {Living6}/>
+        <Cards price = "$1397.00"product = {Living6}name = "Copeland Coffee Table"link = "https://haikudesigns.com/products/copeland-entwine-round-coffee-table"/>
       </div>
       <div className = "col">
-        <Cards price = "$199.99"product = {Living7}/>
+        <Cards price = "$2800.00"product = {Living7}name = "Strickland Mirror"link = "https://haikudesigns.com/products/strickland-mirror"/>
       </div>
       <div className = "col">
-        <Cards price = "$209.99"product = {Living8}/>
+        <Cards price = "$2032.00"product = {Living8}name = "Vallarta Bookshelf"link = "https://haikudesigns.com/products/vallarta-bookshelf"/>
       </div>
       <div className = "col">
-        <Cards price = "$19.99"product = {Living9}/>
+        <Cards price = "$1361.00"product = {Living9}name = "Antonio Media Cabinet"link = "https://haikudesigns.com/products/antonio-media-cabinet"/>
       </div>
       
       </div>
