@@ -11,6 +11,10 @@ const Cards = (props) => {
         "border-color":"#a0583c",
         "max-width":"80%",
     }
+    const buttonStyle = {
+      "background-color":"#a0583c",
+      "color":"white"
+  }
     const font = {
         "font-size": "70%",
     }
@@ -27,7 +31,7 @@ return (
             <p className="card-text fw-medium" style={font}>From {props.price}</p>
             <p>Link:</p>
             <p className="card-text fw-medium" style={font}><a href={props.link}>{props.link}</a></p>
-
+            <button className = 'btn' style = {buttonStyle}>Add to Cart</button>
           </div>
         </div>
       {/* </div>
