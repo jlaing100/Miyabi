@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cards from '../components/Cards';
+import productsData from './productsData.json'; // Import the combined JSON file
 import kids1 from '../../../docs/products/Kids/kids1.png';
 import kids2 from '../../../docs/products/Kids/kids2.png';
 import kids3 from '../../../docs/products/Kids/kids3.png';
@@ -12,51 +13,66 @@ import kids8 from '../../../docs/products/Kids/kids8.png';
 import kids9 from '../../../docs/products/Kids/kids9.png';
 
 const Kids = () => {
-    const custWidth = {
-        "max-width":"70%",
-    }
-    const containerStyle = {
-      "max-width":"70%",
-      "min-width":"60%",
-    }
-      return (
-        <>
-    <div className="container-sm text-center mt-5 mb-5" style={custWidth}>
-            <strong><u>Kids</u></strong>
-            </div>
-    <div className="container" style={containerStyle}>
-      <div className="row row-cols-3 row-cols-sm-3 g-4">
-        <div className="col">
-        <Cards price = "$105.66" product = {kids1} name = "Bamboo Toddler Chair" link = "https://www.etsy.com/listing/1649336963/bamboo-toddler-chair-bamboo-childs-chair"/>
+  const custWidth = {
+    "max-width": "70%",
+  };
+  const containerStyle = {
+    "max-width": "70%",
+    "min-width": "60%",
+  };
+
+  try {
+    return (
+      <>
+        <div className="container-sm text-center mt-5 mb-5" style={custWidth}>
+          <strong><u>Kids</u></strong>
+        </div>
+        <div className="container" style={containerStyle}>
+          <div className="row row-cols-3 row-cols-sm-3 g-4">
+            {productsData.kids.map((item, index) => (
+              <div className="col" key={`kids_${index}`}>
+                <Cards
+                  price={item.price}
+                  product={getKidsImage(item.image)}
+                  name={item.name}
+                  link={item.link}
+                />
+              </div>
+            ))}
           </div>
-      <div className = "col">
-      <Cards price = "$132.35" product = {kids2} name = "Childs Chair with Woven Seat" link = "https://www.etsy.com/listing/1607122340/wooden-toddler-chair-childs-chair-with?click_key=910a86cb8ecd1d7d3b9c3221ee1be2ade13d651e%3A1607122340&click_sum=04bfe10e&ref=related-1&sts=1"/>
-      </div>
-      <div className = "col">
-      <Cards price = "$55.61" product = {kids3} name = "Charles Dudouyt Style Chair kids" link = " https://www.etsy.com/listing/1466952527/charles-dudouyt-style-chair-for-children?click_key=2601756523c5968fd7532217e609f629d5d4578a%3A1466952527&click_sum=af4c6ebd&ref=internal_similar_listing_bot-1&listing_id=1466952527&listing_slug=charles-dudouyt-style-chair-for-children"/>
-      </div>
-      <div className = "col">
-      <Cards price = "$49.99" product = {kids4} name = "Children Table w/ 2 Chairs" link = "https://www.ikea.com/us/en/p/laett-childrens-table-and-2-chairs-white-pine-50178411/"/>
-      </div>
-      <div className = "col">
-      <Cards price = "$89.99" product = {kids5} name = "FLISAT Children Sensory Table" link = "https://www.ikea.com/us/en/p/flisat-childrens-table-50298418/"/>
-      </div>      
-      <div className = "col">
-      <Cards price = "$359.71" product = {kids6} name = "Copernicus Bamboo Sensory Table" link = "https://www.shopbrodart.com/Library-School-Furniture/Childrens-Furniture/Chrildrens-Tables/Interactive-and-Sand-Tables/_/Copernicus-Bamboo-Sensory-Tables/?=&q=35056003"/>
-      </div>
-      <div className = "col">
-      <Cards price = "$115.00" product = {kids7} name = "Abby Bamboo Daybed" link = "https://www.luneberry.com/products/abby-bamboo-daybed"/>
-      </div>
-      <div className = "col">
-      <Cards price = "$359.99" product = {kids8} name = "Avenlur Bamboo Toddler Table" link = "https://www.walmart.com/ip/Avenlur-Bamboo-Toddler-Table-Chair-Set-5-Piece-Activity-Chairs-Children-Arts-Crafts-Homework-Snack-Time-Preschool-Classroom-Furniture-Gift-Boys-Girls/1714797928"/>
-      </div>
-      <div className = "col">
-      <Cards price = "$224.75" product = {kids9} name = "Childrens bench BAMBOO-Bloomingville" link = " https://nordicdecoration.com/en_US/p/Childrens-bench-BAMBOO-Bloomingville/16539"/>
-      </div>
-      
-      </div>
-      </div>
-    </>
-  )
+        </div>
+      </>
+    );
+  } catch (error) {
+    console.error('Error rendering Kids component:', error);
+    return <div>Error occurred. Please check the console for details.</div>;
+  }
 }
-export default Kids
+
+// Function to get kids image based on filename
+function getKidsImage(imageName) {
+  switch(imageName) {
+    case 'kids1.png':
+      return kids1;
+    case 'kids2.png':
+      return kids2;
+    case 'kids3.png':
+      return kids3;
+    case 'kids4.png':
+      return kids4;
+    case 'kids5.png':
+      return kids5;
+    case 'kids6.png':
+      return kids6;
+    case 'kids7.png':
+      return kids7;
+    case 'kids8.png':
+      return kids8;
+    case 'kids9.png':
+      return kids9;
+    default:
+      return null;
+  }
+}
+
+export default Kids;

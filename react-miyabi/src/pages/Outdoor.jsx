@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cards from '../components/Cards';
+import productsData from './productsData.json'; // Import the combined JSON file
 import outdoor1 from '../../../docs/products/Outdoor/outdoor1.png';
 import outdoor2 from '../../../docs/products/Outdoor/outdoor2.png';
 import outdoor3 from '../../../docs/products/Outdoor/outdoor3.png';
@@ -11,53 +12,67 @@ import outdoor7 from '../../../docs/products/Outdoor/outdoor7.png';
 import outdoor8 from '../../../docs/products/Outdoor/outdoor8.png';
 import outdoor9 from '../../../docs/products/Outdoor/outdoor9.png';
 
-
 const Outdoor = () => {
   const custWidth = {
-    "max-width":"70%",
-}
-const containerStyle = {
-  "max-width":"70%",
-  "min-width":"60%",
-}
-  return (
-    <>
-<div className="container-sm text-center mt-5 mb-5" style={custWidth}>
-        <strong><u>Outdoor</u></strong>
-    </div>
-    <div className="container" style={containerStyle}>
-      <div className="row row-cols-3 row-cols-sm-3 g-4">
-        <div className="col">
-        <Cards price = "$121.00" product = {outdoor1} name = "Rattan Patio Chair" link = "https://www.houzz.com/products/cadiz-series-burning-brown-rattan-patio-chair-prvw-vr~100785624"/>
+    "max-width": "70%",
+  };
+  const containerStyle = {
+    "max-width": "70%",
+    "min-width": "60%",
+  };
+
+  try {
+    return (
+      <>
+        <div className="container-sm text-center mt-5 mb-5" style={custWidth}>
+          <strong><u>Outdoor</u></strong>
+        </div>
+        <div className="container" style={containerStyle}>
+          <div className="row row-cols-3 row-cols-sm-3 g-4">
+            {productsData.outdoor.map((item, index) => (
+              <div className="col" key={`outdoor_${index}`}>
+                <Cards
+                  price={item.price}
+                  product={getOutdoorImage(item.image)}
+                  name={item.name}
+                  link={item.link}
+                />
+              </div>
+            ))}
           </div>
-      <div className = "col">
-      <Cards price = "$103.00" product = {outdoor2} name = "Vidaxl Outdoor Deck Chair" link = "https://www.houzz.com/products/vidaxl-outdoor-deck-chair-bamboo-and-canvas-prvw-vr~171662369"/>
-      </div>
-      <div className = "col">
-      <Cards price = "$171.00" product = {outdoor3} name = "VidaXL Patio Lounge Chair" link = "https://www.houzz.com/products/vidaxl-patio-lounge-chair-outdoor-chaise-lounge-chairs-folding-sunlounger-bamboo-prvw-vr~171662161"/>
-      </div>
-      <div className = "col">
-      <Cards price = "$88.00" product = {outdoor4} name = "Vidaxl Deck Chair" link = "https://www.houzz.com/products/vidaxl-deck-chair-bamboo-and-canvas-dark-gray-prvw-vr~188842780"/>
-      </div>
-      <div className = "col">
-      <Cards price = "$124.00" product = {outdoor5} name = "vidaXL Patio Deck Chair Sling" link = "https://www.houzz.com/products/vidaxl-patio-deck-chair-patio-sling-chair-with-headrest-for-deck-beach-bamboo-prvw-vr~108856065"/>
-      </div>      
-      <div className = "col">
-      <Cards price = "$142.00" product = {outdoor6} name = "Bamboo Folding Chair" link = "https://www.houzz.com/products/bamboo-folding-chairs-set-of-2-prvw-vr~45434686"/>
-      </div>
-      <div className = "col">
-      <Cards price = "$159.00" product = {outdoor7} name = "Folding Bamboo Sling Chair" link = " https://www.houzz.com/products/folding-bamboo-relax-sling-chair-set-of-2-aqua-blue-prvw-vr~147715880"/>
-      </div>
-      <div className = "col">
-      <Cards price = "$702.00" product = {outdoor8} name = "Bamboo Hammock Stand" link = "https://www.houzz.com/products/bamboo-hammock-stand-eco-friendly-xl-prvw-vr~66992087"/>
-      </div>
-      <div className = "col">
-      <Cards price = "$249.00" product = {outdoor9} name = "Chai Chair w/ Cushion" link = "https://www.houzz.com/products/chai-chair-with-cushion-prvw-vr~45434802"/>
-      </div>
-      
-      </div>
-      </div>
-    </>
-  )
+        </div>
+      </>
+    );
+  } catch (error) {
+    console.error('Error rendering Outdoor component:', error);
+    return <div>Error occurred. Please check the console for details.</div>;
+  }
 }
-export default Outdoor
+
+// Function to get outdoor image based on filename
+function getOutdoorImage(imageName) {
+  switch(imageName) {
+    case 'outdoor1.png':
+      return outdoor1;
+    case 'outdoor2.png':
+      return outdoor2;
+    case 'outdoor3.png':
+      return outdoor3;
+    case 'outdoor4.png':
+      return outdoor4;
+    case 'outdoor5.png':
+      return outdoor5;
+    case 'outdoor6.png':
+      return outdoor6;
+    case 'outdoor7.png':
+      return outdoor7;
+    case 'outdoor8.png':
+      return outdoor8;
+    case 'outdoor9.png':
+      return outdoor9;
+    default:
+      return null;
+  }
+}
+
+export default Outdoor;
