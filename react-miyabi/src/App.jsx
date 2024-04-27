@@ -15,8 +15,6 @@ import Living from './pages/Living';
 import Kids from './pages/Kids';
 import Menu from './pages/Menu';
 import Login from './pages/Login';
-import About from './pages/About';
-import Team from './pages/Team';
 
 export default function App() {
 
@@ -34,9 +32,7 @@ export default function App() {
         <Route path="Landing" element={<LandingDetail/>} />
         <Route path="Living" element={<Living />} />
         <Route path="Outdoor" element={<Outdoor/>} />
-        <Route path="Kids" element={<Kids/>} />
-        <Route path="About" element={<About/>} />
-        <Route path="Team" element={<Team/>} />
+        <Route path="Kids" element={<Kids />} />
         <Route path="*" element={<NoPage/>} /> {/* catches all unidentified routes*/}
       </Route>
       <Route>
