@@ -16,8 +16,16 @@ const Team = () => {
     <>
     <div class="container-sm text-center mt-5 mb-5" style={custWidth}>
     <h1><strong><u>Meet the Team</u></strong></h1>
-      <img src={Alyssa} />
-      <img src= {Nilesh} />
+      <img src={Alyssa} height = "350" width = "357" />
+      <h4>Alyssa LaValle</h4>
+      <p>Co-Owner</p>
+      <img src= {Nilesh} height = "350" width = "357"/>
+      <h4>Nilesh Singh</h4>
+      <p>Co-Owner</p>
+      <h4>Michael Tynes</h4>
+      <p>Co-Owner</p>
+      <h4>Jonah Liang</h4>
+      <p>Co-Owner</p>
     </div>
 
   </>
