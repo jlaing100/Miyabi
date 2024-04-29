@@ -1,0 +1,47 @@
+:root {
+  --primary-black:#212123;
+  --secondary-grey: #616063;
+  --secondary-tan:#ccb9b1;
+  --secondary-clay: #c08267;
+  --secondary-brown:#a0583c;
+}
+
+#main-header {
+  display: block;
+  margin:0;
+  width: 100%;
+  left:0; 
+}
+
+#navbar {
+  display:flex;
+  flex-direction: row;
+	background-color: black;
+  position:sticky;
+  width:100%;
+  margin:0;
+  padding:0;
+  left:0; 
+  list-style: none;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow-x:scroll;
+  text-align: center;
+}
+#navbar li {
+  margin-right:1em;
+  display: inline;
+  margin:0;
+  border-right: 1px solid #bbb;
+
+}
+#navbar a {
+  text-decoration: none;
+	color:var(--secondary-tan);
+  border-right:#c08267;
+  padding: 10px 30px;
+}
+#navbar li :hover {
+  background-color:#c08267;
+  color:white
+}
