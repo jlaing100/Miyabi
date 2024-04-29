@@ -1,0 +1,88 @@
+/* STYLING FOR THE SHOPPING CART PAGE */
+  
+  .centered-header h3 {
+    color: #503d3d;
+    font-size: 120px;
+    text-align: center;
+  }
+
+  body {
+    text-align: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(interior_ex.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+}
+.centered-header h5 {
+  color: #503d3d;
+  font-size: 35px;
+  text-align: center;
+}
+.centered-header h4 {
+  color: #503d3d;
+  font-size: 50px;
+  text-align: center;
+}
+
+.col {
+  font-size: large;
+  color: #FFFFFF;
+
+
+}
+
+.carousel-inner {
+  
+  display: flex; 
+
+}
+
+
+
+.carousel-item img {
+  max-height: 100%; 
+  max-width: 100%;
+  object-fit: contain;
+ 
+
+}
+#carouselExampleAutoplaying {
+  max-width: 30vw;
+  max-height: 30vh;
+  margin: auto; 
+  margin-bottom: 300px;
+}
+
+
+#main-header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+
+}
+
+#navbar {
+	background-color: black;
+}
+#navbar li {
+	display: inline;
+	padding: 0px 20px;
+	color: white;
+}
+#navbar a {
+	color:white;
+}
+#navbar ul {
+	padding: 5px 30%;
+}
+
+/*
+
+.custom-navbar {
+  width: 100vw; 
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+*/
