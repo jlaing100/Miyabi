@@ -44,7 +44,7 @@ class CreateUserView(generics.CreateAPIView):
         user = self.request.user
         return user.objects().all()
     
-class addCartView(generics.CreateAPIView):
+class addCartView(generics.ListCreateAPIView):
     serializer_class = CartSerializer
     permission_classes = [AllowAny]
 

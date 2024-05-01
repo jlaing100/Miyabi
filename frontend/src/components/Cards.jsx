@@ -49,7 +49,7 @@ const Cards = (props) => {
         setLoading(true);
 
         try {
-            await api.post("/api/user/addCart/", { itemName: ItemName, price: Price, imgURL: prodURL });
+            await api.post("/api/user/addCart/", { itemName: ItemName, price: Price, imgURL: prodURL});
             setSubmitted(true);
             setCartCount(cartCount + 1); // Increment cart count
             setTimeout(() => {
