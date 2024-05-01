@@ -61,9 +61,10 @@ function App() {
         <Route path="Outdoor" element={<Outdoor/>} />
         <Route path="Kids" element={<Kids />} />
         <Route path="*" element={<NoPage/>} /> {/* catches all unidentified routes*/}
-        <Route path="Menu" element={<Menu />} />
         <Route path="About" element={<About />} />
         </Route>
+        <Route path="Menu" element={<Menu />} />
+
       </Routes>
     </BrowserRouter>
     </QueryClientProvider>
