@@ -4,6 +4,9 @@
   --secondary-tan:#ccb9b1;
   --secondary-clay: #c08267;
   --secondary-brown:#a0583c;
+  --background-color: #f6f6f6;
+  --toggle-bg: #f0eb9d;
+  --toggle-fg: #ffd000;
 }
 
 #main-header {
@@ -43,5 +46,14 @@
 }
 #navbar li :hover {
   background-color:#c08267;
-  color:white
+  color:white;
+}
+
+[data-bs-theme="dark"]{
+  --background-color:#0a0a0a;
+  --foreground-color: #c08267;
+  --primary-text-color: #0a0a0a;
+  ---secondary-text-color: white;
+  --toggle-bg: #283452;
+  --toggle-fg: #00a6ff;
 }

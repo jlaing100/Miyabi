@@ -1,4 +1,5 @@
-import react from "react"
+import React, {useState} from "react"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
@@ -18,9 +19,12 @@ import Living from './pages/Living';
 import Kids from './pages/Kids';
 import Menu from './pages/Menu';
 import About from "./pages/About";
+import {Toggle} from "../src/components/Toggle";
+import "../docs/css/style.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
+
 
 function Logout() {
   localStorage.clear()
@@ -33,7 +37,13 @@ function RegisterAndLogout() {
 }
 
 function App() {
+  const [isDark, setIsDark] = useState(true);
   return (
+    <div data-bs-theme={isDark ? "dark" : "light"}>
+      <Toggle
+        isChecked={isDark}
+        handleChange={() => setIsDark(!isDark)}
+        />
     <QueryClientProvider client = {queryClient}>
     <BrowserRouter>
       <Routes>
@@ -63,9 +73,11 @@ function App() {
         <Route path="*" element={<NoPage/>} /> {/* catches all unidentified routes*/}
         <Route path="About" element={<About />} />
         </Route>
+          <Route path="Menu" element={<Menu />} />
       </Routes>
     </BrowserRouter>
     </QueryClientProvider>
+    </div>
   )
 }
 
