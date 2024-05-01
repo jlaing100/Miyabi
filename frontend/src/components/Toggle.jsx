@@ -1,17 +1,14 @@
-import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-Toggle(() => {
-  'use strict'
+export const Toggle = () => {
+    const getStoredTheme = () => localStorage.getItem('theme')
+    const setStoredTheme = theme => localStorage.setItem('theme', theme)
 
-  const getStoredTheme = () => localStorage.getItem('theme')
-  const setStoredTheme = theme => localStorage.setItem('theme', theme)
-
-  const getPreferredTheme = () => {
+    const getPreferredTheme = () => {
     const storedTheme = getStoredTheme()
-    if (storedTheme) {
-      return storedTheme
-    }
+        if (storedTheme) {
+            return storedTheme
+        }
 
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   }
@@ -74,4 +71,4 @@ Toggle(() => {
         })
       })
   })
-})()
+};
