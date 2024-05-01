@@ -63,8 +63,6 @@ function App() {
         <Route path="*" element={<NoPage/>} /> {/* catches all unidentified routes*/}
         <Route path="About" element={<About />} />
         </Route>
-        <Route path="Menu" element={<Menu />} />
-
       </Routes>
     </BrowserRouter>
     </QueryClientProvider>
