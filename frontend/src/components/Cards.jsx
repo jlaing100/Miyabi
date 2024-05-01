@@ -40,6 +40,7 @@ const Cards = (props) => {
     const ItemName = String(props.name);
     const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [cartCount, setCartCount] = useState(0); // State for cart count
 
     const navigate = useNavigate();
 
@@ -50,6 +51,7 @@ const Cards = (props) => {
         try {
             await api.post("/api/user/addCart/", { itemName: ItemName, price: Price, imgURL: prodURL });
             setSubmitted(true);
+            setCartCount(cartCount + 1); // Increment cart count
             setTimeout(() => {
                 setLoading(false);
             }, 1000);
@@ -68,7 +70,7 @@ const Cards = (props) => {
                 <p className="card-text fw-medium fs-4" style={font}>From {props.price}</p>
                 <p className="card-text fw-medium" style={font}></p>
                 <button className="btn" style={submitted ? { ...buttonStyle, backgroundColor: 'green' } : buttonStyle} onClick={handleSubmit} disabled={loading}>
-                    {loading ? 'Adding...' : submitted ? 'Added to Cart ✔️' : 'Add to Cart'}
+                    {loading ? 'Adding...' : submitted ? `Added to Cart ✔️(${cartCount})` : `Add to Cart`} {/* Display cart count */}
                 </button>
             </div>
         </div>
