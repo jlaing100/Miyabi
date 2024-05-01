@@ -20,7 +20,7 @@ import Kids from './pages/Kids';
 import Menu from './pages/Menu';
 import About from "./pages/About";
 import {Toggle} from "../src/components/Toggle";
-import "../docs/css/style.css";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 
 
@@ -35,13 +35,10 @@ function RegisterAndLogout() {
 }
 
 function App() {
-  const [isDark, setIsDark] = useState(true);
   return (
-    <div data-bs-theme={isDark ? "dark" : "light"}>
-      <Toggle
-        isChecked={isDark}
-        handleChange={() => setIsDark(!isDark)}
-        />
+    <>
+    <Toggle/>
+    <QueryClientProvider client = {queryClient}>
     <BrowserRouter>
       <Routes>
         <Route
@@ -71,7 +68,8 @@ function App() {
         <Route path="*" element={<NotFound />}/>
       </Routes>
     </BrowserRouter>
-    </div>
+    </QueryClientProvider>
+    </>
   )
 }
 
