@@ -19,12 +19,8 @@ import Living from './pages/Living';
 import Kids from './pages/Kids';
 import Menu from './pages/Menu';
 import About from "./pages/About";
-<<<<<<< Updated upstream
 import {Toggle} from "../src/components/Toggle";
 import "../docs/css/style.css";
-import { QueryClient, QueryClientProvider } from "react-query";
-=======
->>>>>>> Stashed changes
 
 
 
@@ -41,15 +37,11 @@ function RegisterAndLogout() {
 function App() {
   const [isDark, setIsDark] = useState(true);
   return (
-<<<<<<< Updated upstream
     <div data-bs-theme={isDark ? "dark" : "light"}>
       <Toggle
         isChecked={isDark}
         handleChange={() => setIsDark(!isDark)}
         />
-    <QueryClientProvider client = {queryClient}>
-=======
->>>>>>> Stashed changes
     <BrowserRouter>
       <Routes>
         <Route
@@ -76,32 +68,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<RegisterAndLogout />} />
-<<<<<<< Updated upstream
-        <Route path="*" element={<NotFound />}></Route>
-        <Route path="/" element={<Layout />}> {/* parent route */}
-        <Route index element ={<Home />} />
-        <Route path= "Bathroom" element ={<Bathroom />} /> 
-        <Route path="Bedroom" element={<Bedroom />} />
-        <Route path="Cart" element={<Cart />} />
-        <Route path="Dining" element={<Dining/>} />
-        <Route path="Kitchen" element={<Kitchen/>} />
-        <Route path="Landing" element={<LandingDetail/>} />
-        <Route path="Living" element={<Living />} />
-        <Route path="Outdoor" element={<Outdoor/>} />
-        <Route path="Kids" element={<Kids />} />
-        <Route path="*" element={<NoPage/>} /> {/* catches all unidentified routes*/}
-        <Route path="About" element={<About />} />
-        </Route>
-          <Route path="Menu" element={<Menu />} />
-      </Routes>
-    </BrowserRouter>
-    </QueryClientProvider>
-    </div>
-=======
         <Route path="*" element={<NotFound />}/>
       </Routes>
     </BrowserRouter>
->>>>>>> Stashed changes
+    </div>
   )
 }
 
