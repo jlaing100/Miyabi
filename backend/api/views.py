@@ -48,6 +48,10 @@ class addCartView(generics.CreateAPIView):
     serializer_class = CartSerializer
     permission_classes = [AllowAny]
 
+    def get_queryset(self):
+        queryset = Cart.objects.all()
+        return queryset
+
 def members(request):
         return HttpResponse("Hello World!")
 

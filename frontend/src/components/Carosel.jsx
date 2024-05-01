@@ -9,7 +9,7 @@ const Carousel = () => {
   };
 
   return (
-    <div id="carouselExampleFade" className="carousel slide carousel-fade container-sm px-5 py-4 border-bottom" style={carouselWidth}>
+    <div id="carouselExampleAutoplaying" className="carousel slide carousel-fade container-sm px-5 py-4 border-bottom" style={carouselWidth} data-bs-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img src={examplePng1} className="d-block w-100 rounded-2" alt="First slide"/>
@@ -21,11 +21,11 @@ const Carousel = () => {
           <img src={examplePng1} className="d-block w-100 rounded-2" alt="Third slide"/>
         </div>
       </div>
-      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Previous</span>
       </button>
-      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>

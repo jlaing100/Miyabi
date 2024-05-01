@@ -12,12 +12,17 @@ const Cards = (props) => {
         justifyContent: "center", // Center content vertically
         alignItems: "center", // Center content horizontally
         padding: "10px",
-        width: "100%", // Make card responsive to its container
+        width: "20vw",
+        height: "40vh",
+        overflow: "hidden", // Make card responsive to its container
     }
     const imgStyle = {
         width: "100%", // Make image responsive to its container
         height: "auto", // Maintain aspect ratio
-        maxWidth: "300px", // Limit maximum image width
+        maxWidth: "15vhpx",
+        maxHeight: "15vh",
+        objectFit: "contain",
+        overflow: "hidden",  // Limit maximum image width
     }
     const buttonStyle = {
         backgroundColor: "#a0583c",
@@ -59,7 +64,7 @@ const Cards = (props) => {
         <div className="card" style={cardStyle}>
             <img src={props.product} className="card-img-top" alt="../docs/images/exampleCard.png" style={imgStyle} />
             <div className="card-body" style={cardBodyStyle}>
-                <p className="card-title fw-bolder fs-6" style={font}><a href="{props.link}">{props.name}</a></p>
+                <p className="card-title fw-bolder fs-6" style={font}><a href={props.link}>{props.name}</a></p>
                 <p className="card-text fw-medium fs-4" style={font}>From {props.price}</p>
                 <p className="card-text fw-medium" style={font}></p>
                 <button className="btn" style={submitted ? { ...buttonStyle, backgroundColor: 'green' } : buttonStyle} onClick={handleSubmit} disabled={loading}>
