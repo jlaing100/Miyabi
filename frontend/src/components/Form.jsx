@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import LoadingIndicator from "./LoadingIndicator";
 import Header from "./Header";
-
+import { Link } from "react-router-dom";
 
 function Form({ route, method }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null); // Add error state
     const navigate = useNavigate();
 
     const name = method === "login" ? "Login" : "Register";
@@ -31,7 +32,6 @@ function Form({ route, method }) {
         marginTop: "50px",
         height: "300px",
         borderColor: "#a0583c",
-
     };
 
     const formInputStyle = {
@@ -58,7 +58,6 @@ function Form({ route, method }) {
     const h1Style = {
         textAlign: "center",
     };
-    const loggedIn = false;
 
     const handleSubmit = async (e) => {
         setLoading(true);
@@ -74,7 +73,7 @@ function Form({ route, method }) {
                 navigate("/login");
             }
         } catch (error) {
-            alert(error);
+            setError(error.response.data.detail); // Set error message from API response
         } finally {
             setLoading(false);
         }
@@ -101,9 +100,14 @@ function Form({ route, method }) {
                         placeholder="Password"
                     />
                     {loading && <LoadingIndicator />}
+                    {error && <div style={{ color: "red" }}>{error}</div>} {/* Render error message */}
                     <button style={formButtonStyle} type="submit">
                         {name}
                     </button>
+                    {(method == "login") && <Link to ="/register" className = "mt-3 text-decoration-none text-dark"> Dont have an Account? <span className="text-primary">Register</span></Link>}
+                    {(method == "register") && <Link to ="/login" className = "mt-3 text-decoration-none text-dark"> Have an Account? <span className="text-primary">Login</span></Link>}
+
+                    
                 </form>
             </div>
         </>

@@ -1,29 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
-import axios from "axios";
-import { useQuery } from 'react-query';
-import api from '../api';
+import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 
-const fetchUserData = async () => {
-  const response = await fetch('/api/auth_user'); // Assuming this endpoint returns data from the auth_user table
-  if (!response.ok) {
-    throw new Error('Failed to fetch user data');
-  }
-  return response.json();
-};
 
-const Navbar = (props) => {
+const Navbar = () => {
   const [userData, setUserData] = useState([]);
-
-  const loginStatus = Boolean(props.loggedIn);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchUserData();
-        setUserData(data);
-        console.log(data);
+        // Fetch user data
+        const response = await fetchData();
+        setUserData(response.data);
+
+        // Check if tokens exist in localStorage
+        const accessToken = localStorage.getItem(ACCESS_TOKEN);
+        const refreshToken = localStorage.getItem(REFRESH_TOKEN);
+        const loggedIn = Boolean(accessToken && refreshToken); // Check both tokens existence
+
+        setIsLoggedIn(loggedIn);
+        console.log(response.data);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
@@ -31,6 +29,18 @@ const Navbar = (props) => {
 
     fetchData();
   }, []);
+
+  const handleLogout = async () => {
+    try {
+      // Clear tokens from localStorage
+      localStorage.removeItem(accessToken);
+      localStorage.removeItem(accessToken);
+      // Update logged in state
+      setIsLoggedIn(false);
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
 
   return (
     <>
@@ -45,7 +55,7 @@ const Navbar = (props) => {
               <li className="nav-item px-3">
                 <Link to="/Living" className="nav-link active"><a aria-current="page">Living</a></Link>
               </li>
-              <li className="nav-item px-3">
+                            <li className="nav-item px-3">
                 <Link to="/Kitchen" className="nav-link active"><a aria-current="page">Kitchen</a></Link>
               </li>
               <li className="nav-item px-3">
@@ -64,16 +74,22 @@ const Navbar = (props) => {
                 <Link to="/Kids" className="nav-link active"><a aria-current="page">Kids</a></Link>
               </li>
             </ul>
-            {loginStatus && (
-              <button className="btn btn-danger" onClick={() => handleLogout()}>
+            {isLoggedIn ? (
+              <button className="btn btn-primary" onClick={handleLogout}>
                 Logout
               </button>
-            )}
+            ) : (
+              <Link to="/login" className="btn btn-danger">
+                Logout
+              </Link>
+            )
+          }
           </div>
-        </div>
-      </nav>
-    </>
-  )
-}
+          </div>
+        </nav>
+      </>
+    )
+  }
+  export default Navbar;
 
-export default Navbar;
+      
