@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import React, {useState} from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Login from "./pages/Login"
@@ -69,6 +70,7 @@ function App() {
       </Routes>
     </BrowserRouter>
     </QueryClientProvider>
+    </>
     </>
   )
 }
