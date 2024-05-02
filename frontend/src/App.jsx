@@ -1,5 +1,4 @@
 import React, {useState} from "react"
-import React, {useState} from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Login from "./pages/Login"
@@ -21,8 +20,6 @@ import Kids from './pages/Kids';
 import Menu from './pages/Menu';
 import About from "./pages/About";
 import {Toggle} from "../src/components/Toggle";
-import { QueryClient, QueryClientProvider } from "react-query";
-
 
 
 function Logout() {
@@ -38,8 +35,7 @@ function RegisterAndLogout() {
 function App() {
   return (
     <>
-    <Toggle/>
-    <QueryClientProvider client = {queryClient}>
+      <Toggle/>
     <BrowserRouter>
       <Routes>
         <Route
@@ -63,14 +59,13 @@ function App() {
           <Route path="*" element={<NoPage/>} /> {/* catches all unidentified routes*/}
           <Route path="About" element={<About />} />
         </Route>
+        <Route path="Menu" element={<Menu/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<RegisterAndLogout />} />
         <Route path="*" element={<NotFound />}/>
       </Routes>
     </BrowserRouter>
-    </QueryClientProvider>
-    </>
     </>
   )
 }
