@@ -4,6 +4,8 @@ import Logo from "../../../frontend/docs/images/Miyabi_logo.png";
 import Alyssa from "../../../frontend/docs/team photos/Alyssa.png";
 import Nilesh from "../../../frontend/docs/team photos/Nilesh.png";
 import Michael from "../../../frontend/docs/team photos/Michael.png";
+import Jonah from "../../../frontend/docs/team photos/Jonah.png";
+
 
 
 const About = () => {
@@ -42,6 +44,7 @@ const About = () => {
       </div>
       <div className="container-sm text-center mt-5 mb-5" style={custWidth}>
           <h1><strong><u>Our Team</u></strong></h1>
+          <img src={Jonah} height= "350" width = "357"/>
           <h4>Jonah Laing</h4>
           <p class = "fs-5">Co-Owner</p>
           <img src={Alyssa} height= "350" width = "357"/>
